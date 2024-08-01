@@ -1,10 +1,11 @@
 
-
-function Header(){
+import './Header.css'
+function Header({Title}){
+    
     return (
         <header className="HeaderContainer">
             <div className="HeaderHeadLine">
-            <h1>Test website</h1>
+            <h1>{Title}</h1>
             </div>
         </header>
     );

@@ -4,11 +4,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(60, 50, 150);
+    max-width: 100%;
 }
-Header{
+.HeaderHeadLine{
 text-align: center;
-background-color: aqua;
+padding-left:2rem;
+padding-right: 2rem;
+background-color: hsl(6, 56%, 83%);
+border-radius: 25px;
 }
 
 HeaderHeadLine{

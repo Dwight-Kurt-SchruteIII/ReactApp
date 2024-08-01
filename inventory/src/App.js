@@ -8,14 +8,12 @@ function App() {
   return(
     <>
     <Container style={{ maxWidth: '85%', margin: 'auto' }}>
-    <Header/>
+    <Header Title={'Nadyias Jewellery'}/>
     <Nav/>
     <Footer/>
     </Container>
     </>
   )
-
-
 }
 
 export default App;
