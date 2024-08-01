@@ -1,0 +1,16 @@
+
+.HeaderContainer{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(60, 50, 150);
+}
+Header{
+text-align: center;
+background-color: aqua;
+}
+
+HeaderHeadLine{
+    background-color: rebeccapurple;
+}
