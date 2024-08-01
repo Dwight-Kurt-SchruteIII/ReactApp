@@ -1,17 +1,20 @@
 import './App.css';
 import Container from './Components/Container.jsx';
 import Footer from './Footer/Footer.jsx'
-import Nav from './Nav/Nav.jsx'
-import Header from './Header/Header.jsx'
+import {Header,Nav} from './Header/Header.jsx'
 
 function App() {
   return(
     <>
-    <Container style={{ maxWidth: '85%', margin: 'auto' }}>
+    <html className='MainPart'>
+    <Container style={{ maxWidth: '90%', margin: 'auto' }}>
     <Header Title={'Nadyias Jewellery'}/>
     <Nav/>
     <Footer/>
     </Container>
+
+    </html>
+   
     </>
   )
 }
