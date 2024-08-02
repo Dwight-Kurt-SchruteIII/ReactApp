@@ -3,15 +3,17 @@
   justify-content: center;
   align-items: center;
   max-width: 100%;
-  background-color:black;
+  background-color: black;
   border-radius: 35px 35px 0 0;
 }
+
 .HeaderHeadLine {
   text-align: center;
   border-radius: 25px;
   color: wheat;
   font-size: large;
 }
+
 ul {
   display: flex;
   flex-wrap: wrap; /* Allow items to wrap to the next line */
@@ -29,14 +31,14 @@ li {
   box-sizing: border-box; /* Include padding and border in the element’s total width and height */
   margin: 0; /* Remove margin from li */
 }
+
 li:first-of-type button {
-    border-radius: 0 0 0 35px; /* Top-left and top-right corners rounded */
-  }
-  
-  /* Apply border-radius to the last button */
-  li:last-of-type button {
-    border-radius: 0 0 35px 0; /* Bottom-left and bottom-right corners rounded */
-  }
+  border-radius: 0 0 0 35px; /* Top-left and top-right corners rounded */
+}
+
+li:last-of-type button {
+  border-radius: 0 0 35px 0; /* Bottom-left and bottom-right corners rounded */
+}
 
 a {
   display: block; /* Make the link fill the button */
@@ -68,7 +70,6 @@ button {
   color: wheat;
 }
 
-
 /* Pseudo-element for the transition effect */
 button::before {
   content: ""; /* Required for pseudo-element */
@@ -77,12 +78,7 @@ button::before {
   left: 0;
   width: 100%;
   height: 100%; /* Cover the entire button */
-  background: rgba(
-    255,
-    255,
-    255,
-    0.349
-  ); /* The color you want to transition to */
+  background: hsla(0, 0%, 100%, 0.349); /* The color you want to transition to */
   transition: bottom 0.5s ease-in-out; /* Transition for the effect */
   z-index: 0; /* Place it behind the button content */
 }
@@ -96,7 +92,58 @@ button:hover {
   z-index: 1; /* Ensure text is on top of the pseudo-element */
 }
 
-button:hover a {
-  color: black; /* Change text color on hover */
+.dropdown {
+  position: relative;
+  flex: 1;
+  font-size: 1.5rem; /* Make text bigger */
 }
 
+.dropdown .dropbtn {
+  width: 100%; /* Make dropdown button take full width */
+  height: 100%; /* Make dropdown button take full height */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #000000;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: wheat;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  overflow: hidden;
+  position: relative; /* Set position to relative to position pseudo-elements */
+  transition: color 0.3s ease-in-out; /* Smooth transition for text color */
+  font-size: inherit; /* Inherit font size from the a element */
+  font-family: inherit; /* Inherit font family from the a element */
+}
+
+/* Pseudo-element for the transition effect */
+.dropdown-content a::before {
+  content: ""; /* Required for pseudo-element */
+  position: absolute; /* Position it relative to the link */
+  bottom: 100%; /* Start from outside the bottom */
+  left: 0;
+  width: 100%;
+  height: 100%; /* Cover the entire link */
+  background: hsla(0, 0%, 100%, 0.349); /* The color you want to transition to */
+  transition: bottom 0.5s ease-in-out ; /* Transition for the effect */
+  z-index: 0; /* Place it behind the link content */
+}
+
+.dropdown-content a:hover::before {
+  bottom: 0; /* Move to the bottom of the link on hover */
+}
+
+.dropdown-content a:hover {
+  color: wheat; /* Change text color on hover */
+  z-index: 1; /* Ensure text is on top of the pseudo-element */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
