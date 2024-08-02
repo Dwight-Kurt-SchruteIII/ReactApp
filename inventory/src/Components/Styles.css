@@ -1,0 +1,67 @@
+.Content {
+  display: flex;
+  width: 100%;
+}
+
+.leftBox {
+  flex: 1;
+  margin: 2rem;
+  text-align: start;
+  font-size: large;
+  display: flex; /* Enable flexbox for the container */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+.rightBox {
+  flex: 1;
+  height: auto;
+  max-width: auto;
+}
+.textContent {
+  justify-content: center;
+  justify-items: center;
+  padding: 1rem;
+}
+
+.text-align-right {
+  text-align: end;
+  margin-right: 2rem;
+  margin-top: 10rem;
+}
+
+h1 {
+  text-align: center;
+}
+.image {
+  text-align: center;
+  margin: 2rem;
+  border-radius: 35px;
+  position: relative; /* Ensure this is relative or static */
+  z-index: 1; /* Lower than the navbar's z-index */
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideIn 1s ease-out forwards;
+}
+
+/* Apply different effects if needed */
+.textContent {
+  animation: slideIn 0.5s ease-out forwards;
+}

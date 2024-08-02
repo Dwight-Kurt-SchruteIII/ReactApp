@@ -1,5 +1,14 @@
 
 
-header{
-max-width: 80%;
+footer{
+    text-align: center;
+    font-size: xx-small;
+    background-color: black;
+    color: wheat;
+    padding: 1rem;
+    margin-top: auto; /* Push the footer to the bottom */
+    border-radius: 0 0 35px 35px;
+}
+.footer-font{
+    color: wheat;
 }

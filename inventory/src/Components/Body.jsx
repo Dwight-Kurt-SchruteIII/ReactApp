@@ -1,5 +1,5 @@
 
-const Container = ({ children, style }) => {
+const Body = ({ children, style }) => {
     const defaultStyle = {
         padding: '20px',
         margin: '10px',
@@ -14,4 +14,4 @@ const Container = ({ children, style }) => {
     );
 };
 
-export default Container;
+export default Body;

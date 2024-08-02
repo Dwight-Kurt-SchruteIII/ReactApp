@@ -1,47 +1,102 @@
-
-.HeaderContainer{
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-    background-color: hsla(34, 78%, 90%, 0.432);
+.HeaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  background-color:black;
+  border-radius: 35px 35px 0 0;
 }
-.HeaderHeadLine{
-text-align: center;
-border-radius: 25px;
+.HeaderHeadLine {
+  text-align: center;
+  border-radius: 25px;
+  color: wheat;
+  font-size: large;
 }
-
 ul {
-    display: flex;
-    flex-wrap: wrap; /* Allow items to wrap to the next line */
-    max-width: 100%;
-    margin: 0; /* Remove default margin from ul */
-    padding: 0; /* Remove default padding from ul */
-    list-style-type: none; /* Remove default list styling */
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  max-width: 100%;
+  margin: 0; /* Remove default margin from ul */
+  padding: 0; /* Remove default padding from ul */
+  list-style-type: none; /* Remove default list styling */
+  position: sticky;
+  z-index: 1000;
+  top: 20px;
 }
 
 li {
-    flex: 1; /* Make each li take up 25% of the container width minus some space for gaps */
-    box-sizing: border-box; /* Include padding and border in the element’s total width and height */
-    margin: 0; /* Remove margin from li */
+  flex: 1; /* Make each li take up equal space */
+  box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+  margin: 0; /* Remove margin from li */
+}
+li:first-of-type button {
+    border-radius: 0 0 0 35px; /* Top-left and top-right corners rounded */
+  }
+  
+  /* Apply border-radius to the last button */
+  li:last-of-type button {
+    border-radius: 0 0 35px 0; /* Bottom-left and bottom-right corners rounded */
+  }
+
+a {
+  display: block; /* Make the link fill the button */
+  width: 100%; /* Ensure the link takes full width */
+  height: 100%; /* Ensure the link takes full height */
+  font-size: 1.5rem; /* Make text bigger */
+  font-family: "Arial", sans-serif; /* Change font */
+  color: inherit; /* Inherit color from the button */
+  text-decoration: none; /* Remove underline from links */
 }
 
 button {
-    border-radius: 0; /* Remove border-radius for a brick-like look */
-    background:  hsla(34, 78%, 90%, 0.432);
-    padding: 1rem; /* Add padding to increase button size */
-    border: none; /* Remove default border */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    width: 100%; /* Make button take full width of its parent li */
-    height: 100%; /* Make button take full height of its parent li */
-    box-sizing: border-box; /* Ensure padding and border are included in the width */
-    font-size: 1rem; /* Adjust font size as needed */
-    display: flex; /* Center text inside button */
-    align-items: center; /* Center text vertically */
-    justify-content: center; /* Center text horizontally */
-    transition: color .3s ease-in-out, box-shadow .8s ease-in-out;
+  position: relative; /* Set position to relative to position pseudo-elements */
+  border-radius: 0; /* Remove border-radius for a brick-like look */
+  background: hsl(0, 0%, 0%); /* Background color */
+  padding: 1rem; /* Add padding to increase button size */
+  border: none; /* Remove default border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  width: 100%; /* Make button take full width of its parent li */
+  height: 100%; /* Make button take full height of its parent li */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+  display: flex; /* Center text inside button */
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+  overflow: hidden; /* Hide overflow to keep the effect within button bounds */
+  transition: color 0.3s ease-in-out; /* Smooth transition for text color */
+  font-size: inherit; /* Inherit font size from the a element */
+  font-family: inherit; /* Inherit font family from the a element */
+  color: wheat;
 }
+
+
+/* Pseudo-element for the transition effect */
+button::before {
+  content: ""; /* Required for pseudo-element */
+  position: absolute; /* Position it relative to the button */
+  bottom: 100%; /* Start from outside the bottom */
+  left: 0;
+  width: 100%;
+  height: 100%; /* Cover the entire button */
+  background: rgba(
+    255,
+    255,
+    255,
+    0.349
+  ); /* The color you want to transition to */
+  transition: bottom 0.5s ease-in-out; /* Transition for the effect */
+  z-index: 0; /* Place it behind the button content */
+}
+
+button:hover::before {
+  bottom: 0; /* Move to the bottom of the button on hover */
+}
+
 button:hover {
-    box-shadow: inset 100vh 0 0 0 hsl(36, 92%, 85%);
-  }
+  color: wheat; /* Change text color on hover */
+  z-index: 1; /* Ensure text is on top of the pseudo-element */
+}
+
+button:hover a {
+  color: black; /* Change text color on hover */
+}
+
